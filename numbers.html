@@ -2,29 +2,88 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Numbers</title>
+  <title>Number Facts</title>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
   <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
-  <script type="text/javascript" src="assets/javascript/funfacts.js"></script>
-  
+  <script type="text/javascript"></script>
+  <style>
+    #fact{
+      display:none
+    }
+  </style>
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Fun Facts</a>
+
+<body >
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Fun Facts</a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#numbers">Numbers</a></li>
+          <li><a href="#history">History</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#random">Random</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+  
+  </div> 
+</body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6-auto">
+          <div class="card bg-primary text-white mt-5 p-4">
+            <h1>Numbers Facts</h1>
+            <p>Enter a number and get a random fact</p>
+            <input type="number" class="form-control
+            form-control-lg" id="numberInput" placeholder="Enter any number...">
+            <div id="fact" class="card-body">
+              <h4 class="card-title">
+                Number Fact
+              </h4>
+              <p id="factText" class="card-text"></p>
+            </div>    
           </div>
+        </div>
+      </div>
+    </div>
 
-<h1>Summer Vacation</h1>
-<p>My summer vacation was sunny, silly, and far too short.</p> <p>How many days till Christmas?</p>
-   <p> We now have more users than <span id="number"></span>!</p>
+    <script>
+      let fact = document.querySelector('#fact');
+      let factText = document.querySelector('#factText');
+      let numberInput = document.querySelector('#numberInput');
 
+      numberInput.addEventListener('input', getFactFetch);
+
+      function getFactFetch(){
+      let number = numberInput.value;
+
+     fetch('http://numbersapi.com/'+number)
+    .then(response => response.text())
+    .then(data => {
+        if(number != '') {
+            fact.style.display = 'block';
+            factText.innerText = data;
+        }
+    })
+   
+   .catch(err => console.log(err));
+}
+
+
+
+    
+     </script>
 </body>
 </html>
