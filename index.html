@@ -10,35 +10,46 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+      <!-- <link rel="stylesheet" type="text/css" href="assets/css/style.css"> -->
   <script type="text/javascript" src="assets/javascript/funfacts.js"></script>
 
     <title>Fun Facts</title>
 </head>
 
 <body>
-    
- <div class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="index.html">Fun Facts</a>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Fun Facts</a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a id= "numbers" href="numbers.html">Numbers</a></li>
+          <li><a id= "history" href="history.html">History</a></li>
+          <li><a id= "news" href="news.html">News</a></li>
+          <li><a id= "random" href="random.html">Random</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
     </div>
-    <div class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
-        <li><a href="numbers.html">Numbers</a></li>
-        <li><a href="history.html">History</a></li>
-        <li><a href="news.html">News</a></li>
-        <li><a href="random.html">Random</a></li>
-      </ul>
-    </div><!--/.nav-collapse -->
-  </div>
-</div>
 
-</div>   
+    <div class="homepage-hero-module">
+      <div class="video-container">
+          <div class="filter"></div>
+          <video autoplay loop class="fillWidth">
+              <source src="assets\turnPages\Slide-Show.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+              <source src="assets\turnPages\Slide-Show.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+          </video>
+          <div class="poster hidden">
+              <img src="assets\turnPages\Slide-Show.jpg" alt="Latino_Clock">
+          </div>
+      </div>
+  </div>
+  </div> 
 </body>
 </html>

@@ -2,21 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Number Facts</title>
+  <title>Numbers</title>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
-  <!--<link rel="stylesheet" type="text/css" href="assets/css/style.css"> -->
-  <script type="text/javascript"></script>
-  <style>
-    #fact{
-      display:none
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
+  <script type="text/javascript" src="assets/javascript/funfacts.js"></script>
+  
 </head>
-
-<body class=class= "bg-dark">
-  <div class="navbar navbar-inverse navbar-fixed-top">
+<body><div class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -34,18 +28,16 @@
           <li><a id= "random" href="random.html">Random</a></li>
         </ul>
       </div><!--/.nav-collapse -->
+   </div>
   </div>
-  </div>
-  <div class= "container">
+<div class= "container">
       <h1><span class="blue">3</span></h1> 
      <img style="-webkit-user-select: none;" src="https://wpsites.net/wp-content/uploads/2014/02/colored-number-circle.png">
-    <!--<img data-attachment-id="44768" data-permalink="https://wpsites.net/web-design/colored-numbered-circles-using-pure-css-html/attachment/colored-number-circle/" data-orig-file="https://wpsites.net/wp-content/uploads/2014/02/colored-number-circle.png" data-orig-size="615,315" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="colored number circle" data-image-description="" data-medium-file="https://wpsites.net/wp-content/uploads/2014/02/colored-number-circle-300x153.png" data-large-file="https://wpsites.net/wp-content/uploads/2014/02/colored-number-circle-600x307.png" src="https://wpsites.net/wp-content/uploads/2014/02/colored-number-circle.png" alt="colored number circle" width="615" height="315" class="aligncenter size-full wp-image-44768" srcset="https://wpsites.net/wp-content/uploads/2014/02/colored-number-circle.png 615w, https://wpsites.net/wp-content/uploads/2014/02/colored-number-circle-300x153.png 300w, https://wpsites.net/wp-content/uploads/2014/02/colored-number-circle-600x307.png 600w" sizes="(max-width: 615px) 100vw, 615px">-->
-  </div>
+</div>
 
   <div class="container">
       <div class="row">
         <div class="col-md-6-auto">
-           <!-- <div class="card bg-primary text-white mt-5 p-4" style="margin-top: 150px;">-->
             <h1>Numbers Facts</h1>
             <p>Enter a number and get a random fact</p>
             <input type="number" class="form-control
@@ -77,17 +69,16 @@
 
 <script>
   
+  let fact = document.querySelector('#fact');
+let factText = document.querySelector('#factText');
+let numberInput = document.querySelector('#numberInput');
 
-      let fact = document.querySelector('#fact');
-      let factText = document.querySelector('#factText');
-      let numberInput = document.querySelector('#numberInput');
+numberInput.addEventListener('input', getFactFetch);
 
-      numberInput.addEventListener('input', getFactFetch);
+function getFactFetch(){
+   let number = numberInput.value;
 
-      function getFactFetch(){
-      let number = numberInput.value;
-
-     fetch('http://numbersapi.com/'+number)
+   fetch('http://numbersapi.com/'+ number)
     .then(response => response.text())
     .then(data => {
         if(number != '') {
@@ -98,6 +89,7 @@
    
    .catch(err => console.log(err));
 }
+
     
   </script>
 </body>
