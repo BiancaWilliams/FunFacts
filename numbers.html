@@ -7,8 +7,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
   <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
-  <script type="text/javascript" src="assets/javascript/funfacts.js"></script>
-  
+   
 </head>
 <body><div class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
@@ -30,11 +29,13 @@
       </div><!--/.nav-collapse -->
    </div>
   </div>
+<!--numbers image-->
 <div class= "container">
       <h1><span class="blue">3</span></h1> 
      <img style="-webkit-user-select: none;" src="https://wpsites.net/wp-content/uploads/2014/02/colored-number-circle.png">
 </div>
 
+<!--numbers box-->
   <div class="container">
       <div class="row">
         <div class="col-md-6-auto">
@@ -53,44 +54,8 @@
       </div>
     
 
-<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyAucqcZd99zOttZIaerpJzr6C7bSjw57CE",
-    authDomain: "funfacts-project1.firebaseapp.com",
-    databaseURL: "https://funfacts-project1.firebaseio.com",
-    projectId: "funfacts-project1",
-    storageBucket: "funfacts-project1.appspot.com",
-    messagingSenderId: "551573791560"
-  };
-  firebase.initializeApp(config);
-</script>
-
-<script>
-  
-  let fact = document.querySelector('#fact');
-let factText = document.querySelector('#factText');
-let numberInput = document.querySelector('#numberInput');
-
-numberInput.addEventListener('input', getFactFetch);
-
-function getFactFetch(){
-   let number = numberInput.value;
-
-   fetch('http://numbersapi.com/'+ number)
-    .then(response => response.text())
-    .then(data => {
-        if(number != '') {
-            fact.style.display = 'block';
-            factText.innerText = data;
-        }
-    })
-   
-   .catch(err => console.log(err));
-}
-
     
-  </script>
+      <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+      <script type="text/javascript" src="assets/javascript/numbers.js"></script>
 </body>
 </html>
