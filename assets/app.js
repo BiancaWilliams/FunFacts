@@ -29,7 +29,7 @@ console.log("test");
 
   //reference message collection
   var messagesRef = firebase.database().ref();
-
+  
 //event listener for form submit
 document.getElementById('form-inline').addEventListener ('submit', submitForm);
 
@@ -88,11 +88,13 @@ function saveMessage(userInput, /*destination, firstTrain, frequency*/){
 
 // Handle the errors
 
-}, function(errorObject) {
+}
+// , function(errorObject) {
 
-  console.log("Errors handled: " + errorObject.code);
+//   console.log("Errors handled: " + errorObject.code);
 
-});
+// }
+);
 
 
 
