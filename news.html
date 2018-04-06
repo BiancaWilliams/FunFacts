@@ -5,9 +5,12 @@
   <title>News</title>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" src="assets\style.css">
+
   <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+
   <!-- <link rel="stylesheet" type="text/css" href="assets/css/style.css"> -->
-  <script type="text/javascript" src="assets/javascript/funfacts.js"></script>
+  <script type="text/javascript" src="app.js"></script>
   
 </head>
 
@@ -31,6 +34,38 @@
             </ul>
           </div><!--/.nav-collapse -->
         </div>
+      
+        <div class="col-xs-12 col-sm-12 col-md-1 right-column results">
+        <div class="homepage-hero-module">
+          <div class="video-container">
+              <div class="filter"></div>
+              <video autoplay loop class="fillWidth">
+                  <source src="assets\clock\Latino_Clock.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+                  <source src="assets\clock\Latino_Clock.ogv" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+              </video>
+              <div class="poster hidden">
+                  <img src="assets\clock\Latino_Clock.jpg" alt="Latino_Clock">
+              </div>
+          </div>
       </div>
+    </div>
+
+      <div class= "content">
+          <div class="col-xs-12 col-sm-12 col-md-9 left-column">
+            <h1>News<br/>
+            <span class="small">Serach news topics that intrest you.</span></h1>
+
+              <form class="form-inline">
+              <div class="form-group">
+                <input type="text" class="form-control" id="userInput" placeholder="news Type">
+              </div>
+              <button type="submit" class="btn btn-default submit"><span class="newsSearch" aria-hidden="true"></span> search</button>
+            </form>
+      
+            <div class="buttonArea">  
+            </div>      
+          </div>          
+      </div>
+
 </body>
 </html>
