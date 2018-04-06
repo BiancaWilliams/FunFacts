@@ -2,21 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Number Facts</title>
+  <title>Numbers</title>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
-  <!--<link rel="stylesheet" type="text/css" href="assets/css/style.css"> -->
-  <script type="text/javascript"></script>
-  <style>
-    #fact{
-      display:none
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
+  <script type="text/javascript" src="assets/javascript/funfacts.js"></script>
+  
 </head>
-
-<body class=class= "bg-dark">
-  <div class="navbar navbar-inverse navbar-fixed-top">
+<body><div class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -60,45 +54,24 @@
       </div>
     </div>
 
-    
+    <div class="homepage-hero-module">
+      <div class="video-container">
+          <div class="filter"></div>
+          <video autoplay loop class="fillWidth">
+              <source src= "assets\numbers\Push-The-Buttons.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+              <source src="assets\numbers\Push-The-Buttons.ogv" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+          </video>
+          <div class="poster hidden">
+              <img src="assets\numbers\Push-The-Buttons.jpg" alt="Latino_Clock">
+          </div>
+      </div>
+  </div>
 
-<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyAucqcZd99zOttZIaerpJzr6C7bSjw57CE",
-    authDomain: "funfacts-project1.firebaseapp.com",
-    databaseURL: "https://funfacts-project1.firebaseio.com",
-    projectId: "funfacts-project1",
-    storageBucket: "funfacts-project1.appspot.com",
-    messagingSenderId: "551573791560"
-  };
-  firebase.initializeApp(config);
-</script>
 
-<script>
+  </div>
+<h1>Summer Vacation</h1>
+<p>My summer vacation was sunny, silly, and far too short.</p> <p>How many days till Christmas?</p>
+   <p> We now have more users than <span id="number"></span>!</p>
 
-      let fact = document.querySelector('#fact');
-      let factText = document.querySelector('#factText');
-      let numberInput = document.querySelector('#numberInput');
-
-      numberInput.addEventListener('input', getFactFetch);
-
-      function getFactFetch(){
-      let number = numberInput.value;
-
-     fetch('http://numbersapi.com/'+number)
-    .then(response => response.text())
-    .then(data => {
-        if(number != '') {
-            fact.style.display = 'block';
-            factText.innerText = data;
-        }
-    })
-   
-   .catch(err => console.log(err));
-}
-    
-     </script>
 </body>
 </html>
