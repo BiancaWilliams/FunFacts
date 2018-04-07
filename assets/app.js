@@ -8,20 +8,36 @@ $.ajax({
 .done(function(response) {
     console.log(response);
     var data = response.articles;
-    console.log("author "  + data[0].author);
+    console.log("title "  + data[0].description);
 });
 console.log("test");
 
+// var searchObjects = [ 
+//   { 
+//     author,
+//     description,
+//     publishedAt,
+//     title,
+//     url 
+//   }
+// ];  
+
+// var listContacts = function () {
+//   for (var i = 0; i <= searchObjects.length; i++) {
+//   return searchObjects[i].title + ' ' + searchObjects[i].description;
+//   }
+// };
 
 // javascript to grab the "search" results and display it to the screen
   // Initialize Firebase
+  // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyAkvjtXklrCEduRMfooP-zLXpsfk0Qm5bM",
-    authDomain: "funfacts-newspage.firebaseapp.com",
-    databaseURL: "https://funfacts-newspage.firebaseio.com",
-    projectId: "funfacts-newspage",
-    storageBucket: "funfacts-newspage.appspot.com",
-    messagingSenderId: "250612511359"
+    apiKey: "AIzaSyCdSJT9xMlFItVBb-HAxum2_N65UG1EScY",
+    authDomain: "newpage-funfacts.firebaseapp.com",
+    databaseURL: "https://newpage-funfacts.firebaseio.com",
+    projectId: "newpage-funfacts",
+    storageBucket: "newpage-funfacts.appspot.com",
+    messagingSenderId: "269175188168"
   };
   firebase.initializeApp(config);
   
@@ -31,7 +47,12 @@ console.log("test");
   var messagesRef = firebase.database().ref();
   
 //event listener for form submit
-document.getElementById('form-inline').addEventListener ('submit', submitForm);
+// document.getElementById('form-inline').addEventListener ('submit', submitForm);
+
+document.addEventListener("submit", myFunction);
+
+function myFunction() {
+    document.getElementById("form-inline");}
 
 //submit form
 function submitForm(e) {
@@ -44,16 +65,16 @@ function submitForm(e) {
   //save message
   saveMessage(userInput);
 
-  //show alert
-  document.querySelector('.alert').style.display = 'block';
+  // //show alert
+  // document.querySelector('.alert').style.display = 'block';
 
-  //hide alert after 3 seconds
-  setTimeout(function() {
+  // //hide alert after 3 seconds
+  // setTimeout(function() {
 
-    //show alert
-  document.querySelector('.alert').style.display = 'none';
+  //   //show alert
+  // document.querySelector('.alert').style.display = 'none';
 
-  },3000);
+  // },3000);
 
   //reset form
   document.getElementById('form-inline').reset();
@@ -66,7 +87,7 @@ function getInputVal(id) {
 }
 
 //save the message to firebase
-function saveMessage(userInput, /*destination, firstTrain, frequency*/){
+function saveMessage(userInput, ){
   newsDb.ref().push({
     userInput: userInput });
 
@@ -89,12 +110,7 @@ function saveMessage(userInput, /*destination, firstTrain, frequency*/){
 // Handle the errors
 
 }
-// , function(errorObject) {
-
-//   console.log("Errors handled: " + errorObject.code);
-
-// }
-);
-
-
+ , function(errorObject) {
+   console.log("Errors handled: " + errorObject.code);
+ });
 
