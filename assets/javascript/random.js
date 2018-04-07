@@ -26,8 +26,7 @@ var FFactsdb = firebase.database();
 var triviaPath = "assets/images/ffrandom/trivia/";
 var animePath = "assets/images/ffrandom/trivia/anime";
 var vintgePath = "assets/images/ffrandom/vintage";
-var lngKey =  "";
-var lngURL = "http://api.funtranslations.com/translate/";
+
 
 // animeAry = [
 //     "RedJellyfishCrop.jpg", "PeacockFanRich.jpeg", "BangkokWarriorsTwo.jpg",
@@ -43,19 +42,32 @@ animeAry = ["PaisleyElephant.jpg", "BangkokWarriorCrouching.jpg", "BangkokWarrio
 
 //=================   FUNCTIONS  ================
 
+
+function bkgrndHide() {
+    $('.video-container').hide();
+}
+
+
 function trivShow() {
 
-        console.log("executing trivShow Bubbles");
+       $("#vidMp4").append($("<scope>"))
+           .attr("src", triviaPath + "bubbles/RainDrops_Medium.mp4")
+           .attr("type", "video/mp4");
+       $("#vidWebm").append($("<scope>"))
+           .attr("src", triviaPath + "bubbles/RainDrops_Medium.webm")
+           .attr("type", "video/webm");
 
-        (".vidmp4").attr("src", triviaPath + "bubbles/RainDrops_Medium.mp4");
-        (".vidwebm").attr("src", triviaPath + "bubbles/RainDrops_Medium.webm");
+       $(".animeKontainr").append('.video-container').show();
 
-
-        ("#vuRandm").append('.homepage-hero-module');
-        ("#bvidPlay").on("click", function() {
-            ("#vuRandm").play();
+       $("#bvidPlay").on("click", function() {
+            $('.vidToPlay')[0].play();
         });
-        ("#vuRandm").pause();
+
+       $("#bvidPause").on("click", function() {
+            $('.vidToPlay')[0].pause();
+        });
+
+
 
         // var sAryLen = sweetAry.length;
         // console.log("in trivShow running Sweet");
@@ -69,20 +81,22 @@ function trivShow() {
         // choseRandm(aAryLen);
 
          choseRandm();
-
+         $("bkgrnd").css( "opacity", 1);
     // }
 }
 
 // function choseRandm(aAryLen) {
 function choseRandm() {
+
     for (i = 0; i < 5; i++) {
         // var aAryName = Math.floor(Math.random() * aAryLen) + 1;
         // var imToGet =  animePath + animeAry[aAryName];
 
-        var imToGet = animePath + animeAry[i];
-        ("animeHere").attr("src", imToGet);
-        ("#shoStuff").append("animeHere");
-        ("#vuRandm").append("#shoStuff");
+        var imgToGet = animePath + animeAry[i];
+
+        $('.holdAnime').append("<img>").attr("src", imgToGet);
+        $("#animeKontainer").append("#holdAnime");
+
     }
 
     function vintCarousel() {
@@ -90,27 +104,38 @@ function choseRandm() {
         console.log("executing vintCarousel");
         slidepics = "";
     }
+}
 
-// function  lanConv() {
+function  lanConv() {
 
     console.log("executing lanConv");
-    // lanToConv = "";
-    // var txtkey = ;
-    // http://api.funtranslations.com/translate/gungan.json
-
-// }
-
-
-    // $(document).ready(function() {
-
-    $("body").on("click", "#bTriv", function () {
-        console.log("calling trivShow");
-        trivShow();
-    }).on("click", "#Vint", function () {
-        onsole.log("calling vintCarousel");
-        vintCarousel();
-    }).on("click", "#bLang", function () {
-        console.log("calling lanConv");
-        lanConv();
-    });
+    upSideDwn();
+    codeMorse();
+    gunGan();
+    paperTape();
 }
+
+    //=============================
+    //==   LOGIC        ===========
+    //=============================
+
+
+ document.on("ready", function() {
+
+     $("body").on("click", "#bTriv", function () {
+         console.log("calling trivShow");
+         bkgrndHide();
+         trivShow();
+     }).on("click", "#bVint", function () {
+         onsole.log("calling vintCarousel");
+         bkgrndHide();
+         vintCarousel();
+     }).on("click", "#bLang", function () {
+         console.log("calling lanConv");
+         bkgrndHide();
+         lanConv();
+     });       //==  END ON CLICKs  ==
+
+     $("#bkgrnd").show();
+
+ });      //==  END DOC READY  ==
