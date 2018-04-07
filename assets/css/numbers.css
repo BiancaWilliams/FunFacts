@@ -1,11 +1,54 @@
 
-body {
 
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: black;
-    font-family: system-ui;
-    color: green;
-    height: 100%;
-    font-family: Bradley Hand, cursive;
+/*background css*/
+video {
+    object-fit: contain;
+}
+.homepage-hero-module {
+    border-right: none;
+    border-left: none;
+    position: relative; 
+    position: fixed;
+    z-index: 0;
+}
+#container > div {
+    z-index: 1;
  }
+ 
+ .video-container {
+    position: fixed;
+    z-index: -2;
+    position: relative; 
+    bottom: 0%;
+    left: 0%;
+    height: 95%;
+    width: 100%;
+    overflow: hidden;
+    background: #000;
+}
+.video-container .poster img {
+    width: 100%;
+    bottom: 0;
+    position: absolute; 
+    position: fixed;
+    z-index: -3;
+}
+.video-container .filter {
+    
+    z-index: 100;
+    position: absolute;
+    position: fixed;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+}
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+}
+body {
+    margin: 0;
+}

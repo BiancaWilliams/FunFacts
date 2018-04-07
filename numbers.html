@@ -5,54 +5,67 @@
   <title>Numbers</title>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/numbers.css">
   <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
        
 </head>
-<body>
-  <div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="index.html">Fun Facts</a>
-      </div>
-      <div class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li><a id= "numbers" href="numbers.html">Numbers</a></li>
-          <li><a id= "news" href="news.html">News</a></li>
-          <li><a id= "random" href="random.html">Random</a></li>
-        </ul>
-      </div><!--/.nav-collapse -->
-   </div>
-  </div>
-<!--numbers image-->
-<div class= "container">
-      <h1><span class="blue"></span></h1> 
-     <img style="-webkit-user-select: none;" src="https://wpsites.net/wp-content/uploads/2014/02/colored-number-circle.png">
-</div>
 
-<!--numbers box-->
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Fun Facts</a>
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a id= "numbers" href="numbers.html">Numbers</a></li>
+              <li><a id= "news" href="news.html">News</a></li>
+              <li><a id= "random" href="random.html">Random</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+        </div>
+<!--background module-->
+  <div class="homepage-hero-module">
+      <div class="video-container">
+          <div class="filter"></div>
+          <video autoplay loop class="fillWidth">
+              <source src="assets\turnPages\Analog-Typing.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+              <source src="assets\turnPages\Analog-Typing.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+          </video>
+          <div class="poster hidden">
+              <img src="assets\turnPages\Analog-Typing.jpg" alt="Latino_Clock">
+          </div>
+      </div>
+  </div>
+  </div> -->
+
+  <divdiv class="col-xs-12 col-sm-12 col-md-9 left-column"></divdiv>
+
+
+  <!--numbers box-->
   <div class="container">
       <div class="row">
-        <div class="col-md-6-auto">
-            <h1>Number Facts</h1>
+          <div class="col-xs-12 col-sm-12 col-md-9 left-column">
+            <br></br>
+          <h1>Number Facts</h1>
             <p>Enter a number and get a random fact</p>
             <input type="number" class="form-control
-            form-control-lg" id="numberInput" placeholder="Enter any number...">
+            form-control-md" id="numberInput" placeholder="Enter any number...">
             <div id="fact" class="card-body">
-              <h4 class="card-title"style="
-              font-size: x-large;">
+              <h4 class="card-title">
                 Number Facts
               </h4>
-              <p id="factText" class="card-text" style="
-              font-size: x-large;">
+              <p id="factText" class="card-text">
           </div>
-      <!--  </div>  -->
+        </div> 
       </div>
+  </div>
     
 
     
