@@ -2,47 +2,84 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Random</title>
+  <title>FunFacts Random</title>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
-  <!-- <link rel="stylesheet" type="text/css" href="assets/css/style.css"> -->
-  <script type="text/javascript" src="assets/javascript/funfacts.js"></script>
-  
+  <link rel="stylesheet" type="text/css" href="assets/css/ffrandm.css">
+
+   <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.html">Fun Facts</a>
-          </div>
-          <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-              <li><a id= "numbers" href="numbers.html">Numbers</a></li>
-              <li><a id= "history" href="history.html">History</a></li>
-              <li><a id= "news" href="news.html">News</a></li>
-              <li><a id= "random" href="random.html">Random</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
 
-        <div class="homepage-hero-module">
-          <div class="video-container">
-              <div class="filter"></div>
-              <video autoplay loop class="fillWidth">
-                  <source src="assets\After-Party\Mp4\After-Party.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
-                  <source src="assets\After-Party\WEBM\After-Party.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
-              </video>
-              <div class="poster hidden">
-                  <img src="assets\After-Party\Snapshots" alt="">
-              </div>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+       <div class="navbar-header">
+           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+           </button>
+              <a class="navbar-brand" href="index.html">Fun Facts</a>
+       </div>
+       <div class="collapse navbar-collapse">
+           <ul class="nav navbar-nav">
+               <li><a id= "numbers" href="numbers.html">Numbers</a></li>
+               <li><a id= "news" href="news.html">News</a></li>
+               <li><a id= "random" href="random.html">Random</a></li>
+           </ul>
+       </div>     <!--/.nav-collapse -->
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-1">
+        <!--<div class="homepage-hero-module">-->
+            <!--<div class="video-container">-->
+                <!--<div class="filter"></div>-->
+                <!--<video autoplay loop class="fillWidth">-->
+                    <!--<source src="assets\clock\Latino_Clock.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.-->
+                    <!--<source src="assets\clock\Latino_Clock.ogv" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.-->
+                <!--</video>-->
+                <div class="bkgrnd">
+                    <img src="assets/images/ffrandom/trivia/anime/DigitalMusic.jpg" alt="Digital Music">
+                </div>
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+         <!--   DIV DISPLAYS TOPIC BUTTONS  -->
+         <!--   trivia, vintage, languages  -->
+
+    <div id="container">
+       <div class="col-xs-12 col-sm-12 col-md-3">
+          <div id="btnDiv">
+             <h4>Press a button to choose a topic</h4>
+             <div class="btn-group btn-group-sm bChoices">
+                 <button id="bTriv" type="submit" class="btn btn-primary" value="Trivia">Trivia</button>
+                 <button id="bVint" type="submit" class="btn btn-primary" value="Vintage">Vintage</button>
+                 <button id="bLang" type="submit" class="btn btn-primary" value="Languages">Language</button>
+             </div>
           </div>
-          
-      </div>
+       </div>     <!--  END COL MEDIUM 3  -->
+       <div class="col-xs-12 col-sm-12 col-md-9">
+          <div id="vuRandm">
+          </div>
+       </div>  <!--  END COL MED 9 -->
+    </div>    <!--  END CONTAINER  -->
+
+          <!--  CONTAINER FOR HOMEMADE VIDEO  -->
+    <div class="video-container">
+        <div class="filter">
+           </div>
+           <video autoplay loop class="vidSize">
+               <source class="vidmp4"  type="video/mp4">
+               <source class="vidwebm"  type="video/webm">
+               The browser is outdated. It does not support the video tag.
+           </video>
+           <button id="bvidPlay" type="submit" class="btn btn-primary active">Play</button>
+           <button id="bvidPause" type="submit" class="btn btn-primary">Pause</button>
+    </div>
+
 </body>
+
+     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+     <script type="text/javascript" src="assets/javascript/random.js"></script>
+
 </html>
